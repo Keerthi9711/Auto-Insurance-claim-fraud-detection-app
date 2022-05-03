@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Insurance Claim Fraud Detection</title>
+ </head>
+<body>
+        <h2>Welcome to Claim Processing App</h2>
+        <h3>Enter customer info</h3>
+        <form action = "{{ url_for('bankclassify') }}" method="POST">
+            <table border="1" style="border-color:gray; border-collapse:collapse;" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td><h4>Months As Customer</h4> 
+                    <input type="number" name="Months As Customer" min="0" max="600" > </td>               
+					<td><h4>Age</h4> 
+                    <input type="number" name="Age" min="18" max="80" > </td>               
+					<td><h4>Policy Deductable</h4> 
+                    <input type="number" name="Policy Deductable" min="1000" max="2000" > </td>               
+					<td><h4>Policy Annual Premium</h4> 
+                    <input type="number" name="Policy Annual Premium" min="1000" max="20000" > </td> 
+				</tr>
+				<tr>
+					<td><h4>Umbrella Limit</h4> 
+                    <input type="number" name="Umbrella Limit" min="0" max="1000000" > </td>               
+					<td><h4>Capital Gains</h4> 
+                    <input type="number" name="Capital Gains" min="0" max="100000" > </td>
+					<td><h4>Capital Loss</h4> 
+                    <input type="number" name="Capital Loss" min="-100000" max="100000" > </td>					
+					<td><h4>Incident Hour</h4> 
+                    <input type="number" name="Incident Hour" min="0" max="24" > </td>					
+				</tr>
+				<tr>
+					<td><h4>Vehicles Involved</h4> 
+                    <input type="number" name="Vehicle Involved" min="1" max="10" > </td>					
+					<td><h4>Bodily Injured</h4> 
+                    <input type="number" name="Bodily Injured" min="0" max="10" > </td>					
+					<td><h4>Witness</h4> 
+                    <input type="number" name="Witness" min="0" max="10" > </td>					
+                    <td><h4>Total Claim Amount</h4>
+					<input type="number" name="Total Claim Amount" min="0" max="1000000" > </td>	
+				</tr>
+			    <tr>
+                    <td><h4>Policy CSL</h4>
+                        <select name = "Policy CSL">
+                            <option value="250/500">250/500</option>
+                            <option value="100/300">100/300</option>
+                            <option value="500/1000">500/1000</option>                          
+                        </select>
+                    </td>
+					<td><h4>Sex</h4>
+                        <select name = "Sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+					<td><h4>Property Damage</h4>
+                        <select name = "Property Damage">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+							<option value="Unknown">Unknown</option>
+                        </select>
+                    </td>
+					<td><h4>Police Reported</h4>
+                        <select name = "Police Reported">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+							<option value="Unknown">Unknown</option>
+                        </select>
+                    </td>
+				</tr>
+				<tr>
+					<td><h4>Incident Type</h4>
+                        <select name = "Incident Type">
+                            <option value="Single Vehicle Collision">Single Vehicle Collision</option>
+                            <option value="Multi Vehicle COllision">Multi Vehicle COllision</option>
+							<option value="Vehicle Theft">Vehicle Theft</option>
+							<option value="Parked Car">Parked Car</option>
+                        </select>
+                    </td>
+					<td><h4>Collision Type</h4>
+                        <select name = "Collision Type">
+                            <option value="Side Collision">Side Collision</option>
+                            <option value="Front COllision">Front COllision</option>
+							<option value="Rear COllision">Rear COllision</option>
+							<option value="Unknown">Unknown</option>
+                        </select>
+                    </td>	
+                </tr>
+				<tr>
+                    <td><h4>Incident State</h4>
+                        <select name = "Incident State">
+                            <option value="New York">NY</option>
+                            <option value="South Carolina">SC</option>
+                            <option value="Ohio">OH</option>
+							<option value="Pennsylvania">PN</option>
+                        </select>
+                    </td>
+                    <td><h4>Authorities Contacted</h4>
+                        <select name = "Authorities Contacted">
+                            <option value="Police">Police</option>
+                            <option value="Fire">Fire</option>
+							<option value="Other">Other</option>
+							<option value="Ambulance">Ambulance</option>
+                        </select>
+                    </td>
+                    <td><h4>Policy State</h4>
+                        <select name = "Policy State">
+                            <option value="Ohio">OH</option>
+                            <option value="Indiana">IN</option>
+                            <option value="Illinios">IL</option>                          
+                        </select>
+                    </td>
+                    <td><h4>Incident Severity</h4>
+                        <select name = "Incident Severity">
+                            <option value="Total Loss">Total Loss</option>
+                            <option value="Minor Damage">Minor Damage</option>
+							<option value="Major Damage">Major Damage</option>
+							<option value="Trivial Damage">Trivial Damage</option>
+                        </select>
+                    </td>            
+                </tr>
+            </table>
+            <!-- <input type="hidden" id="forminput" name="forminput"  >    -->        
+            <p><input type="submit" value="Validate Claim"></p>
+             
+             <h3> The registered claim is : {{ results }}  </h3>
+            
+        </form>
+</body>
+</html>
